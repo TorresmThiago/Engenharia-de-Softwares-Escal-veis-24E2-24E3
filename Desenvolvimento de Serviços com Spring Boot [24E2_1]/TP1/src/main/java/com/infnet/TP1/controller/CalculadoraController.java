@@ -41,7 +41,7 @@ public class CalculadoraController {
         return num1 * num2;
     }
 
-    @RequestMapping(value = "/divisao", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/multiplicacao", method = { RequestMethod.GET, RequestMethod.POST })
     public double multiplicacao(@RequestParam double num1, @RequestParam double num2) {
         return multiplicacaoMethod(num1, num2);
     }
@@ -50,7 +50,7 @@ public class CalculadoraController {
         return Math.pow(num1, num2);
     }
 
-    @RequestMapping(value = "/divisao", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/exponenciacao", method = { RequestMethod.GET, RequestMethod.POST })
     public double exponenciacao(@RequestParam double num1, @RequestParam double num2) {
         return exponenciacaoMethod(num1, num2);
     }
