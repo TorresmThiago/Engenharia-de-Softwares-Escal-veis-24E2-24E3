@@ -11,14 +11,6 @@ import java.util.Map;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    int idUnico = 0;
-
-    int getUniqueId()
-    {
-        return idUnico++;
-    }
-
-
     List<Produto> listaProdutos = new ArrayList<>();
 
     @GetMapping(value = "/listar")
@@ -34,6 +26,13 @@ public class ProdutoController {
             }
         }
         return null;
+    }
+
+    int idUnico = 0;
+
+    int getUniqueId()
+    {
+        return idUnico++;
     }
 
     @PostMapping(value = "/adicionar")
