@@ -6,7 +6,7 @@
 
 ## Projeto de Bloco: Engenharia de Softwares Escaláveis [24E2_5]
 
-* [TP1](Projeto-de-bloco/TP1/)
+* [TP1](Projeto-de-Bloco/TP1/)
 
 
 ## Desenvolvimento de Serviços com Spring Boot [24E2_1]
