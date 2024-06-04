@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class CustomActuatorEndpoint {
-    @GetMapping("/actuator/custom")
-    public Map<String, String> customEndpoint() {
+public class MetricaEspecifica {
+    @GetMapping("/actuator/metricaEspecifica")
+    public Map<String, String> metricaEspecifica() {
         Map<String, String> response = new HashMap<>();
-        response.put("status", "Custom endpoint ativo");
+        response.put("status", "Endpoint ativo");
         return response;
     }
 }
