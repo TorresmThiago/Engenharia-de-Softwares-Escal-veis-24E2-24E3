@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.infnet</groupId>
-	<artifactId>TP1</artifactId>
+	<artifactId>ProjetoDeBloco</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TP1</name>
+	<name>ProjetoDeBloco</name>
 	<description>Primeira entrega da matéria de projeto de bloco</description>
 	<properties>
 		<java.version>17</java.version>
