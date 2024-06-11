@@ -1,10 +1,8 @@
-package br.com.infnet.TP1.controller;
+package br.com.infnet.projetoDeBloco.controller;
 
-import br.com.infnet.TP1.model.Tenis;
-import br.com.infnet.TP1.service.TenisService;
+import br.com.infnet.projetoDeBloco.model.Tenis;
+import br.com.infnet.projetoDeBloco.service.TenisService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springdoc.api.OpenApiResourceNotFoundException;

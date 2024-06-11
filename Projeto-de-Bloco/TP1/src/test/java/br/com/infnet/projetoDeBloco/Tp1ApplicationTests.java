@@ -1,4 +1,4 @@
-package br.com.infnet.TP1;
+package br.com.infnet.projetoDeBloco;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

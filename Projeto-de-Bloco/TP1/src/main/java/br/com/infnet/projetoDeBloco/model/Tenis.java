@@ -1,4 +1,4 @@
-package br.com.infnet.TP1.model;
+package br.com.infnet.projetoDeBloco.model;
 
 import lombok.*;
 

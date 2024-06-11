@@ -1,6 +1,6 @@
-package br.com.infnet.TP1.service;
+package br.com.infnet.projetoDeBloco.service;
 
-import br.com.infnet.TP1.model.Tenis;
+import br.com.infnet.projetoDeBloco.model.Tenis;
 import org.springdoc.api.OpenApiResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
