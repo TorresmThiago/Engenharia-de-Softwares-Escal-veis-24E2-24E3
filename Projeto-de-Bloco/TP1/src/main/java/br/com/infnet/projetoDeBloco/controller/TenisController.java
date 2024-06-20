@@ -1,7 +1,7 @@
 package br.com.infnet.projetoDeBloco.controller;
 
 import br.com.infnet.projetoDeBloco.model.Tenis;
-import br.com.infnet.projetoDeBloco.service.TenisService;
+import br.com.infnet.projetoDeBloco.service.implementation.TenisServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.MalformedParametersException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tenis")
 public class TenisController {
-    final TenisService tenisService;
+    final TenisServiceImpl tenisService;
 
-    public TenisController(TenisService tenisService){
+    public TenisController(TenisServiceImpl tenisService){
         this.tenisService = tenisService;
     }
 
@@ -51,7 +52,7 @@ public class TenisController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> get(@PathVariable int id){
         try {
-            Tenis tenis = tenisService.getById(id);
+            Optional<Tenis> tenis = tenisService.getById(id);
             return ResponseEntity.status(HttpStatus.OK).body(tenis);
         } catch (MalformedParametersException exception){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
@@ -71,7 +72,7 @@ public class TenisController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Tenis tenis){
         try {
-            tenisService.create(tenis);
+            tenisService.save(tenis);
             return ResponseEntity.status(HttpStatus.CREATED).body(String.format("Tenis %s adicionado!", tenis.getModelo()));
         } catch (MalformedParametersException exception){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
