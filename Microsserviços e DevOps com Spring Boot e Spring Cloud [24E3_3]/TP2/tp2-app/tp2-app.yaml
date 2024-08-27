@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tp2-app
+  labels:
+    app: tp2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+        - name: springboot-container
+          image: seu-registro/springboot-app:latest  # Substitua com o nome da sua imagem Docker
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-service
+spec:
+  type: LoadBalancer  # Exponha o serviço externamente
+  ports:
+    - port: 80  # Porta externa
+      targetPort: 8080  # Porta do contêiner
+  selector:
+    app: springboot
