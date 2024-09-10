@@ -1,6 +1,7 @@
 package edu.infnet.br.controller;
 
 import edu.infnet.br.domain.base.Evento;
+import edu.infnet.br.model.Pedido;
 import edu.infnet.br.repository.EventoStore;
 import edu.infnet.br.service.PedidoService;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,12 @@ public class PedidoController {
     public ResponseEntity<String> novoPedido(@RequestParam String pedidoId, @RequestParam String clientId, @RequestParam long valorTotal){
         pedidoService.novoPedido(pedidoId, clientId, valorTotal);
         return ResponseEntity.ok("Pedido criado com sucesso");
+    }
+
+    @GetMapping("/get")
+    public ResponseEntity<String> getPedido(@RequestParam String pedidoId){
+        Pedido pedido = pedidoService.getPedido(pedidoId);
+        return ResponseEntity.ok(pedido.toString());
     }
 
     @GetMapping("/eventos")

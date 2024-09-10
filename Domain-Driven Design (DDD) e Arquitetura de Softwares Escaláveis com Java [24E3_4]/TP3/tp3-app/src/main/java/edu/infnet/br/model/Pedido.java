@@ -8,7 +8,8 @@ import lombok.*;
 
 @Entity
 @Table(name = "PEDIDO")
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
+@AllArgsConstructor@NoArgsConstructor@Builder
 public class Pedido {
 
     @Id
