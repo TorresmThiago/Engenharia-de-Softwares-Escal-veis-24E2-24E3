@@ -1,4 +1,7 @@
 package edu.infnet.br.repository;
 
-public interface PedidoRepository {
+import edu.infnet.br.model.Pedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PedidoRepository extends JpaRepository<Pedido, String> {
 }

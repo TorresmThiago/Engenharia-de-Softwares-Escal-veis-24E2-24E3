@@ -8,10 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Main {
-    EventoStore eventoStore = new EventoStore();
-    CommandHandler commandHandler = new CommandHandler(eventoStore);
-    CommandGateway commandGateway = new CommandGateway(commandHandler);
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
