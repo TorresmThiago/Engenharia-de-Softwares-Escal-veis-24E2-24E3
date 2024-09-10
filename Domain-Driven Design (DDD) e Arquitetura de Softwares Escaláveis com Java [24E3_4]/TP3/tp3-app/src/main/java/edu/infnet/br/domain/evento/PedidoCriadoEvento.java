@@ -19,7 +19,7 @@ public class PedidoCriadoEvento extends Evento {
 
     @Override
     public String toString() {
-        return "PedidoCriadoEvent{" +
+        return "PedidoCriadoEvento{" +
                 "pedidoId='" + pedidoId + '\'' +
                 ", clienteId='" + clienteId + '\'' +
                 ", valorTotal=" + valorTotal +

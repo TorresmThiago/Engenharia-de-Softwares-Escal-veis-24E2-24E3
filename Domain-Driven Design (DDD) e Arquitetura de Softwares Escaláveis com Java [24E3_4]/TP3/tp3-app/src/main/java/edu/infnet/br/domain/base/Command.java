@@ -15,8 +15,6 @@ public abstract class Command {
 
     @Override
     public String toString() {
-        return "Command{" +
-                "commandId=" + commandId +
-                '}';
+        return "Command{ commandId=" + commandId + "}";
     }
 }
