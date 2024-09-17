@@ -1,0 +1,89 @@
+services:
+  rabbitmq:
+    image: bitnami/rabbitmq:3.13
+    container_name: RABBIT-SERVER
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - at-network
+  mongo:
+    container_name: MONGO-SERVER
+    image: mongo:7-jammy
+    volumes:
+      - ./mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - at-network
+  mongo-express:
+    image: mongo-express:1.0.2-20-alpine3.19
+    links:
+      - mongo
+    ports:
+      - "8099:8081"
+    networks:
+      - at-network
+    depends_on:
+      - mongo
+  eureka:
+    build: ../eureka-service/
+    container_name: EUREKA-SERVER
+    ports:
+      - "8761:8761"
+    networks:
+      - at-network
+  tenis-service:
+    ports:
+      - "8085:8085"
+    build: ../tenis-service/
+    networks:
+      - at-network
+    depends_on:
+      - eureka
+  marca-service:
+    ports:
+      - "8084:8084"
+    build: ../marca-service/
+    networks:
+      -  at-network
+    depends_on:
+      - eureka
+  pedido-service:
+    ports:
+      - "8083:8083"
+    build: ../pedido-service/
+    networks:
+      - at-network
+    depends_on:
+      - eureka
+      - mongo
+  nota-fiscal-service:
+    build: ../nota-fiscal-service/
+    networks:
+      - at-network
+    depends_on:
+      - eureka
+      - rabbitmq
+  nota-fiscal-worker:
+    build: ../nota-fiscal-worker/
+    networks:
+      - at-network
+    depends_on:
+      - nota-fiscal-service
+      - rabbitmq
+  api-gateway:
+    build: ../api-gateway/
+    ports:
+      - "9999:9999"
+    networks:
+      - at-network
+    depends_on:
+      - eureka
+      - tenis-service
+      - marca-service
+      - pedido-service
+      - nota-fiscal-service
+networks:
+  at-network:
+    driver: bridge
