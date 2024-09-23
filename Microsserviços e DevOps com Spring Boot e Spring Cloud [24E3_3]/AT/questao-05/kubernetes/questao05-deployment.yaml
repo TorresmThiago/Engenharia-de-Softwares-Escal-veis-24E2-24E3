@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: at-questao-05
+  labels:
+    app: at-questao-05
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: at-questao-05
+  template:
+    metadata:
+      labels:
+        app: at-questao-05
+    spec:
+      containers:
+        - name: at-questao-05
+          image: torresm/at-questao-05:latest
+          ports:
+            - containerPort: 8085
