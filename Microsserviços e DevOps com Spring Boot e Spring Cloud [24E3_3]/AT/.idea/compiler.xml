@@ -8,9 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-service" />
-        <module name="api-gateway" />
         <module name="questao-04" />
+        <module name="questao-06" />
         <module name="questao-05" />
+        <module name="questao-07" />
+        <module name="api-gateway" />
         <module name="questao-02" />
         <module name="questao-01" />
       </profile>
@@ -29,6 +31,8 @@
       <module name="questao-02" options="-parameters" />
       <module name="questao-04" options="-parameters" />
       <module name="questao-05" options="-parameters" />
+      <module name="questao-06" options="-parameters" />
+      <module name="questao-07" options="-parameters" />
       <module name="questao02" options="-parameters" />
     </option>
   </component>
