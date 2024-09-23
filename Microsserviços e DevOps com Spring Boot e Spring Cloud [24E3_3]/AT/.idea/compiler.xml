@@ -16,6 +16,7 @@
         <module name="questao-11" />
         <module name="questao-02" />
         <module name="questao-01" />
+        <module name="questao-12" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="questao-06" options="-parameters" />
       <module name="questao-07" options="-parameters" />
       <module name="questao-11" options="-parameters" />
+      <module name="questao-12" options="-parameters" />
       <module name="questao02" options="-parameters" />
     </option>
   </component>
